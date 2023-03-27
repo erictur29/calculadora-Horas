@@ -1,0 +1,49 @@
+h1 {
+    color: red;
+    text-align: center;
+}
+
+.principal{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.selectores{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    justify-items: center;
+    padding: 2.5rem;
+}
+select{
+    border-radius: 1rem;
+}
+
+.selectores-tipo{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+input{
+    border-radius: 1rem;
+    border-style:double;
+    width: 5rem;
+    
+}
+
+.selectores-tiempo{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2rem;
+    padding-bottom: 1rem;
+}
+
+.registro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}

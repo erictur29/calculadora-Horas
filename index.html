@@ -5,18 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de horas</title>
-    <h1>Calculadora de horas</h1>
+    <link href="style.css" rel="stylesheet">
+   
 </head>
 <body>
-    <div>
-        <select id="tipo">
-            <option value=0>A descontar</option>
-            <option value=1>A sumar</option>
-        </select>
-        <span>hora de inicio </span><input type="time" name="horas" id="horaInIn">
-        <span>hora de fin </span><input type="time" name="horas" id="horaInFin">
+    <h1>Calculadora de horas</h1>
+    <div class="principal">
+        <div class="selectores">
+            <div class="selectores-tipo">
+                <select id="tipo">
+                    <option value=0>A descontar</option>
+                    <option value=1>A sumar</option>
+                </select>
+                <select id="tipoJornada">
+                    <option value="2">JI</option>
+                    <option value="3">DC</option>
+                </select>
+            </div>
+            <div class="selectores-tiempo">
+                <span>Hora Inicio:</span><input type="number" name="horas" id="horaIn">
+                <span>Minuto Inicio:</span><input type="number" name="horas" id="minIn">
+                <span>Hora Fin:</span><input type="number" name="horas" id="horaFin">
+                <span>Minuto Fin:</span><input type="number" name="horas" id="minFin">
+            </div>
+            <div class="boton-selectores">
+                <button id="boton">Añadir</button>
+            </div>
+            
+        </div>
+        <div class="registro" id="registro">
+            <h2>Reistro de horas</h2>
+        </div>
     </div>
-
+    
     <script src="app.js"></script>
 </body>
 </html>
