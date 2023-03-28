@@ -47,3 +47,9 @@ input{
     align-items: center;
     justify-content: flex-start;
 }
+
+.boton{
+    border-radius: 1rem;
+    background-color: rgb(248, 0, 33);
+    color: black;
+}
