@@ -24,8 +24,16 @@ function horaTotal(){
         }, 3000)
         } else {
             let minTotal = parseInt(minFin.value) - parseInt(minIn.value);
-            let horaTotal = parseInt(horaFin.value) -parseInt(horaIn.value);
+            let horaTotal = parseInt(horaFin.value) - parseInt(horaIn.value);
+            
+            const registro = document.querySelector('#registro')
+            const resultado = document.createElement('p')
+            resultado.textContent = `${horaTotal}h y ${minTotal}mins ${tipo.value} de ${tipoJornada.value}`;
+            registro.appendChild(resultado)
+            
             console.log(`las horas son ${horaTotal} y los minutos ${minTotal}`)
+
+
             // if (minTotal >= 60){
             //     horaTotal = horaTotal + 1;
             //     minTotal = minTotal - 60;
