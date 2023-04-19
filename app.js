@@ -19,6 +19,7 @@ let horaTotal = 0;
 
 
 boton.addEventListener('click', registroHoras);
+totalHoras();
 
 function registroHoras(){
     
