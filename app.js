@@ -45,6 +45,7 @@ function registroHoras(){
             const registro = document.querySelector('#registro')
             const resultado = document.createElement('p')
             resultado.textContent = `${fecha.value} => ${horaTotal}h y ${minTotal}mins ${tipo.value} de ${tipoJornada.value}`;
+            resultado.classList.add('fuente');
             registro.appendChild(resultado)
 
             //actualizamos los registros de la horas totales y tomamos los valores a tener en cuenta
@@ -89,8 +90,11 @@ function registroHoras(){
         }
 
         resultadoJi.textContent = `Horas de Jornada Irregular: ${jih}h y ${jim}mins`;
+        resultadoJi.classList.add('fuente');
         resultadoDc.textContent = `Horas de Descanso Compensado: ${dch}h y ${dcm}mins`;
+        resultadoDc.classList.add('fuente');
         resultadoTotal.textContent = `Total: ${jih+dch}h y ${jim+dcm}mins`;
+        resultadoHoras.classList.add('fuente')
         resultadoHoras.appendChild(resultadoJi);
         resultadoHoras.appendChild(resultadoDc);
         resultadoHoras.appendChild(resultadoTotal);
