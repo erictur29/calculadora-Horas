@@ -30,15 +30,19 @@ select{
 input{
     border-radius: 1rem;
     border-style:double;
-    width: 5rem;
-    
+    width: 6rem;
 }
+
 
 .selectores-tiempo{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.2rem;
     padding-bottom: 1rem;
+}
+
+.selectores-tiempo input{
+    width: 2rem;
 }
 
 .registro{

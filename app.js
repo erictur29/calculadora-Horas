@@ -2,6 +2,7 @@ const horaIn = document.querySelector('#horaIn');
 const minIn = document.querySelector('#minIn');
 const horaFin = document.querySelector('#horaFin');
 const minFin = document.querySelector('#minFin');
+const fecha = document.querySelector('#fecha');
 
 const tipo= document.querySelector('#tipo');
 const tipoJornada= document.querySelector('#tipoJornada');
@@ -19,15 +20,16 @@ let horaTotal = 0;
 
 
 boton.addEventListener('click', registroHoras);
-totalHoras();
 
+//funcion para contabilizar las horas y meterlas en el registro
 function registroHoras(){
     
     minTotal = parseInt(minFin.value) - parseInt(minIn.value);
     horaTotal = parseInt(horaFin.value) - parseInt(horaIn.value);
 
+    console.log(fecha.value)
 
-    if (horaIn.value === '' || horaFin.value === ''  || minIn.value === ''  || minFin.value === ''){
+    if (horaIn.value === '' || horaFin.value === ''  || minIn.value === ''  || minFin.value === '' || fecha.value === ''){
         
         mostrarMensaje('Todos los campos son obligatorios', 'error')
 
@@ -42,17 +44,20 @@ function registroHoras(){
         
             const registro = document.querySelector('#registro')
             const resultado = document.createElement('p')
-            resultado.textContent = `${horaTotal}h y ${minTotal}mins ${tipo.value} de ${tipoJornada.value}`;
+            resultado.textContent = `${fecha.value} => ${horaTotal}h y ${minTotal}mins ${tipo.value} de ${tipoJornada.value}`;
             registro.appendChild(resultado)
+
+            //actualizamos los registros de la horas totales y tomamos los valores a tener en cuenta
             limpiarTotal();
             totalHoras(horaTotal, minTotal);
 
+            //reseteamos los inputs
             document.querySelector('#formulario').reset();
             
         }   
         
     }
-
+    //cogemos la contabilizacion de las horas y las metemos en el registro total
     function totalHoras(horas, mins){
         const resultadoHoras = document.createElement('div');
         const resultadoJi = document.createElement('p');
@@ -72,6 +77,15 @@ function registroHoras(){
         }else if (tipo.value === 'a descontar' && tipoJornada.value === 'descanso compensado'){
             dch = dch - horas;
             dc = dcm - mins;
+        }
+
+        if (jim < 0){
+            jim = jim + 60;
+            jih = jih - 1;
+        }
+        if (dcm < 0){
+            dcm = dcm + 60;
+            dch = dch - 1;
         }
 
         resultadoJi.textContent = `Horas de Jornada Irregular: ${jih}h y ${jim}mins`;
